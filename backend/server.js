@@ -156,7 +156,7 @@ app.post("/get-product-image", async (req, res) => {
           // البحث عن صورة بالحجم الكامل
           imgUrl = await page.$eval("img.j-image", (img) => img.getAttribute("src"));
       } else if (url.includes("asos.com")) {
-          // انتظار الصور الكبيرة وتحميل الصورة بالحجم الكامل
+         
           await page.waitForSelector("img.gallery-image");
           const images = await page.$$eval("img.gallery-image", (imgs) =>
               imgs.map((img) => img.getAttribute("data-src") || img.getAttribute("src"))
